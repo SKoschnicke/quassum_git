@@ -1,0 +1,5 @@
+QUASSUM_COMPANY = "your-company-slug"
+QUASSUM_USER = "user@example.com"
+QUASSUM_PASSWORD = "secret"
+QUASSUM_PROJECT_SLUG = "your-project"
+
