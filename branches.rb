@@ -19,7 +19,7 @@ end
 quassum_url = "http://#{QUASSUM_COMPANY}.quassum.com"
 agent = Mechanize.new
 agent.user_agent_alias = "Mac Safari"
-page = agent.get("#{quassum_url}/login")
+page = agent.get("#{quassum_url}")
 login_form = page.forms.first
 
 login_form["user[email]"] = QUASSUM_USER
@@ -44,5 +44,10 @@ branches.each do |branch|
 
 end
 
+File.open("delete_closed_tickets.sh", "w") do |file|
+  closed_branches.each do |branch|
+    file.write("git push origin :"+branch[:name])
+  end
+end
 page = agent.get("#{quassum_url}/logout")
 #File.open("tmp/page_#{page_number}.html", "w") { |f| f.write(page.body) }; page_number += 1;
