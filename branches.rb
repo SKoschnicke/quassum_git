@@ -46,7 +46,7 @@ end
 
 File.open("delete_closed_tickets.sh", "w") do |file|
   closed_branches.each do |branch|
-    file.write("git push origin :"+branch[:name])
+    file.write("git push origin :"+branch[:name]+"\n")
   end
 end
 page = agent.get("#{quassum_url}/logout")

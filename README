@@ -1,0 +1,17 @@
+1. create list of remote branches and save it into branches.txt
+
+   git branch -r > branches.txt
+
+   (see create_branch_txt.sh)
+
+2. execute branches.rb
+
+   ruby branches.rb
+
+   this creates delete_closed_tickets.sh
+
+3. execute delete_closed_tickets.sh to delete branches
+   you can use ssh-agent to avoid entering your password on every branch delete:
+
+   `ssh-agent`
+   ssh-add
